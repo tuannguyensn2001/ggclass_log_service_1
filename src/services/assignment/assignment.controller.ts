@@ -17,6 +17,7 @@ export class AssignmentController implements LogAssignmentService {
   async GetLogAssignmentByAssignment(
     request: GetLogAssignmentByAssignmentRequest,
   ): Promise<GetLogAssignmentByAssignmentResponse> {
+    console.log('has request');
     const result = await this.service.getAll();
     const response: LogAssignment[] = result.map((item) => {
       return {
