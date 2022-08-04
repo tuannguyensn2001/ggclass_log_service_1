@@ -7,3 +7,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "50051:50051"
+    env_file:
+      - config.yaml
