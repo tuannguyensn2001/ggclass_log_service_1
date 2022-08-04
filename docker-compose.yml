@@ -9,3 +9,4 @@ services:
       - "50051:50051"
     env_file:
       - config.yaml
+    container_name: log
