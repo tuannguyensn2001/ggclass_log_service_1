@@ -16,6 +16,14 @@ export class AssignmentService implements OnModuleInit {
     return this.assignmentModel.find().exec();
   }
 
+  async getByAssignmentId(assignmentId: number): Promise<Assignment[]> {
+    return this.assignmentModel
+      .find({
+        assignmentId: assignmentId,
+      })
+      .exec();
+  }
+
   async create(
     assignment: Pick<Assignment, 'assignmentId' | 'action'>,
   ): Promise<Assignment> {
