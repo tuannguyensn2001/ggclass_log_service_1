@@ -3,6 +3,7 @@ import { AssignmentController } from './assignment.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Assignment, AssignmentSchema } from 'src/schemas/assignment';
 import { AssignmentService } from './assignment.service';
+import { RabbitmqModule } from 'src/providers/rabbitmq/rabbitmq.module';
 
 @Module({
   controllers: [AssignmentController],
@@ -10,6 +11,7 @@ import { AssignmentService } from './assignment.service';
     MongooseModule.forFeature([
       { name: Assignment.name, schema: AssignmentSchema },
     ]),
+    RabbitmqModule,
   ],
   providers: [AssignmentService],
 })

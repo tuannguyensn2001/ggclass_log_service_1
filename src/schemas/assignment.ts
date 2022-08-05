@@ -1,16 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import * as mongoose from 'mongoose';
 
 export type AssignmentDocument = Assignment & Document;
 
 @Schema({
   timestamps: true,
-  collection: 'logassignments',
 })
-export class Assignment {
-  @Prop()
-  _id: string;
-
+export class Assignment extends Document {
   @Prop()
   assignmentId: number;
 
